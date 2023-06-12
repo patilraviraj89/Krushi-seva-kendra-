@@ -1,0 +1,134 @@
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Dashboard</h1>
+       
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+
+        <div class="row">
+
+            <!-- Left side columns -->
+            <div class="row md" >
+
+                <!-- Sales Card -->
+                <div class="col-xxl-4 col-md-6">
+                    <div class="card info-card sales-card" style="cursor:pointer;" routerLink="/admin/admin">
+                        <div class="card-body">
+                            <h5 class="card-title">Admins</h5>
+                           
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"><i class="fa-solid fa-user"></i>
+                                    <i class="bi bi-cart"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>Total Admins - {{totalAdmins}}</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div><!-- End Sales Card -->
+
+                <!-- Revenue Card -->
+                <div class="col-xxl-4 col-md-6">
+                    <div class="card info-card revenue-card" style="cursor:pointer;" routerLink="/admin/crops">
+                        <div class="card-body">
+                            <h5 class="card-title">Crops</h5>
+
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"><i class="fa-solid fa-wheat-awn"></i>
+                                    <i class="bi bi-currency-dollar"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>Crops - {{totalCrops}}</h6>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div><!-- End Revenue Card -->
+
+                <!-- Customers Card -->
+                <div class="col-xxl-4 col-xl-12">
+
+                    <div class="card info-card customers-card" style="cursor:pointer;" routerLink="/admin/towns">
+                        <div class="card-body">
+                            <h5 class="card-title">Towns</h5>
+
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"><i class="fa-solid fa-house"></i>
+                                    <i class="bi bi-people"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>Towns - {{totalTowns}}</h6>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-xxl-4 col-xl-12">
+
+                    <div class="card info-card customers-card" style="cursor:pointer;" routerLink="/admin/farmers">
+                        <div class="card-body">
+                            <h5 class="card-title">Farmers</h5>
+
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"><i class="fa-solid fa-tractor"></i>
+                                    <i class="bi bi-people"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>Farmers - {{totalFarmers}}</h6>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            
+
+        </div>
+        <h2>Apx-chart</h2>
+        <!-- <apx-chart [series]="series" [chart]="chart" [title]="title"></apx-chart> -->
+        <!-- <div id="chart">
+        <apx-chart [series]="chartSeries" [chart]="chartOptions"></apx-chart>
+         </div> -->
+         <!-- <div id="column-chart" style="height:700px; width:700px;">
+            <apx-chart [series]="chartSeries" [chart]="chartOptions"></apx-chart>
+          </div> -->
+             
+          <div id="column-chart">
+            <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart"
+                       [plotOptions]="chartOptions.plotOptions" [xaxis]="chartOptions.xaxis">
+            </apx-chart>
+          </div>
+
+
+        <!-- <div id="chart">
+            <apx-chart
+              [series]="chartOptions.series"
+              [chart]="chartOptions.chart"
+              [dataLabels]="chartOptions.dataLabels"
+              [plotOptions]="chartOptions.plotOptions"
+              [yaxis]="chartOptions.yaxis"
+              [xaxis]="chartOptions.xaxis"
+              [fill]="chartOptions.fill"
+              [title]="chartOptions.title"
+            ></apx-chart>
+          </div> -->
+          
+
+
+    </section>
+
+</main>

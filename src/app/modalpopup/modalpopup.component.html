@@ -1,0 +1,39 @@
+<h2 mat-dialog-title>Recommendations</h2>
+<div mat-dialog-content class="mat-typography">
+    <div style="height:400px; width:400px;">
+        <form [formGroup]="form" (ngSubmit)="save(form.value)">
+            <h3>Date</h3>
+            <mat-form-field>
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <input type="date" formControlName="rdate" class="form-control" id="">
+                <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <hr>
+            <h3>message</h3>
+            <mat-form-field>
+                <mat-label>Enter message</mat-label>
+                <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+                    cdkAutosizeMaxRows="5" formControlName ="message"></textarea>
+            </mat-form-field>
+            <h3>Crops</h3>
+            <select (change)="getSelectedValue($event)">
+                <option value="option1">Rice</option>
+                <option value="option2">Cotton</option>
+                <option value="option3">Wheat</option>
+                <option value="option4">rices</option>
+            </select>
+
+                <!-- </mat-dialog-content> -->
+    <mat-dialog-actions align="end">
+
+        <button mat-raised-button color="primary" click="save()">save</button>
+        <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+
+    </mat-dialog-actions>
+        </form>
+
+    </div>
+

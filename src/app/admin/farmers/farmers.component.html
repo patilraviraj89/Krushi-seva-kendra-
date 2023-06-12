@@ -1,0 +1,48 @@
+<p>farmers works!</p>
+<main id="main" class="main">
+    <h2>Farmers</h2>
+    <section class="section dashboard"><br>
+
+        
+    
+    <button  class="btn btn-outline-danger text-capitalize mx-4 btn-sm mt-2" routerLink="/admin/farmer">Add Farmers</button>
+    <div class="col-12  mt-5">
+        <div class="card recent-sales overflow-auto">
+  
+          <div class="card-body">
+            <h5 class="card-title">Farmers</h5>
+        
+  
+            <table class="table table-borderless datatable">
+            
+                <tr>
+                  <th scope="col">Action</th>
+                  <th scope="col">No</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Mobile No</th>
+                  <th scope="col">Town</th>
+                  <th scope="col">Recommendations</th>
+                 
+                </tr>
+           
+        
+                <tr *ngFor="let farmer of farmers;let i=index">
+                    <td><button class="btn btn-outline-danger primary" (click)="delete(farmer.id)">delete</button>
+                    <button class="btn btn-outline-primary" (click)="edit(farmer.id)">edit</button></td>
+                    <td scope="row">{{i+1}}</td>
+                    <td>{{farmer.name}}</td>
+                    <td>{{farmer.mobileno}}</td>
+                    <td>{{farmer.towns.name}}</td>
+                    <td><button class="btn btn-outline-info" routerLink="/admin/recommendationform/{{ farmer.id }}">click</button></td>
+                  
+                </tr>
+            
+       
+            </table>
+        
+          </div>
+      </div>
+     </div>
+    </section>
+
+</main><!-- End #main -->

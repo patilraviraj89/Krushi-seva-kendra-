@@ -1,0 +1,78 @@
+<p>crops works!</p>
+<main id="main" class="main">
+    <h2>Farmer</h2>
+    <section class="section dashboard"><br>
+
+        <div class="card">
+            <div class="card-body">
+              <!-- <h5 class="card-title">Vertical Form</h5> -->
+             
+              <!-- Vertical Form -->
+             <form class="row g-3" [formGroup]="formdata" (ngSubmit)="save(formdata.value)">
+                <div class="col-12">
+                  <label for="inputNanme4" class="form-label"> Name</label>
+                  <!-- <span *ngif="formdata.controls.name.touched && formdata.controls.name.invalid" -->
+                  <!-- class="text-danger small">please Enter name </span>  -->
+                  <input type="text" formControlName="name" class="form-control" id="">
+                  </div>
+                  <div class="col-12">
+                    <label for="" class="form-label">Mobile No</label>
+                    <!-- <span *ngif="formdata.controls.Username.touched && formdata.controls.name.Username" -->
+                    <!-- class="text-danger small">please Enter Username ></span> -->
+                  <input type="text" formControlName="mobileno" class="form-control" id="">
+                  </div>
+                  <div class="col-12">
+                    <label for="" class="form-label">Town</label>
+                    <!-- <span *ngif="formdata.controls.Username.touched && formdata.controls.name.Username" -->
+                    <!-- class="text-danger small">please Enter Username ></span> -->
+                    <select class="form-control" formControlName="townid">
+                    <option value="0">--select</option>
+                    <option *ngFor="let town of towns" value="{{ town.id }}">{{ town.name }}</option>
+                  </select>
+                
+                  </div>
+               
+                  <hr>
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-primary" >save</button>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+          
+                  </div>
+                </form>
+                <hr>
+                <!-- <div class="card-body">
+                    <h5 class="card-title">Crops </h5>
+                
+        
+                    <table class="table table-borderless datatable">
+                    
+                        <tr>
+                          <th scope="col">Action</th>
+                          <th scope="col">No</th>
+                          <th scope="col">Name</th>
+                       
+                        </tr>
+                   
+                
+                        <tr *ngFor="let admin of admin;let i=index">
+                            <td><button class="btn btn-outline-primary" (click)="delete(admin.id)">delete</button>
+                            <button class="btn btn-outline-primary" (click)="edit(admin.id)">edit</button></td>
+                            <td scope="row">{{i+1}}</td>
+                            <td>{{admin.name}}</td>
+                          
+                        </tr>
+                    
+               
+                    </table>
+                
+                  </div> -->
+            
+
+</div>        </div>
+    
+    </section>
+    
+        
+    
+
+
